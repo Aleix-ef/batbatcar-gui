@@ -50,10 +50,52 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #dc3545;
     color: #fff;
 }
 
 .form-actions button:hover {
-    background-color: #0056b3;
+    background-color: #dc3545;
+}
+
+.form-actions-cancelar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+.form-actions-cancelar button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.form-actions-cancelar button:hover {
+    background-color: #dc3545;
+}
+
+.form-actions-reservar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+.form-actions-reservar button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: #fff;
+}
+
+.form-actions-reservar button:hover {
+    background-color: #28a745;
 }

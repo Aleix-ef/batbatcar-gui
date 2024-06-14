@@ -29,12 +29,12 @@
                 <a href="/viajes"><button type="button">Volver</button></a>
             </div>
 
-            <form th:if="${viaje.estaDisponible()}" action="/cancelarViaje" method="get" class="form-actions">
+            <form th:if="${viaje.estaDisponible()}" action="/cancelarViaje" method="get" class="form-actions-cancelar">
                 <input type="hidden" name="codViaje" th:value="${viaje.codViaje}" />
                 <button type="submit">Cancelar viaje</button>
             </form>
             
-            <form th:if="${viaje.estaDisponible()}" action="/reservarViaje" method="get" class="form-actions">
+            <form th:if="${viaje.estaDisponible()}" action="/reservarViaje" method="get" class="form-actions-reservar">
                 <input type="hidden" name="codViaje" th:value="${viaje.codViaje}" />
                 <button type="submit">Realizar reserva</button>
             </form>

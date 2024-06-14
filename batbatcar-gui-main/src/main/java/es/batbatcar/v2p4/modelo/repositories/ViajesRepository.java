@@ -25,7 +25,7 @@ public class ViajesRepository {
     private final ViajeDAO viajeDAO;
     private final ReservaDAO reservaDAO;
 
-    public ViajesRepository(@Autowired InMemoryViajeDAO viajeDAO, @Autowired InMemoryReservaDAO reservaDAO) {
+    public ViajesRepository(@Autowired SQLViajeDAO viajeDAO, @Autowired SQLReservaDAO reservaDAO) {
         this.viajeDAO = viajeDAO;
         this.reservaDAO = reservaDAO;
     }

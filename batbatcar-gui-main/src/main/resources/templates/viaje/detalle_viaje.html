@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Viaje</title>
+    <link rel="stylesheet" href="/css/detalle_viaje.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Detalles del Viaje</h2>
+        </div>
+        <div class="detalle-viaje">
+            <h1>Detalles del Viaje</h1>
+            <p>Código del viaje: <span id="codViaje" th:text="${viaje.codViaje}"></span></p>
+            <p>Propietario: <span id="propietario"  th:text="${viaje.propietario}"></span></p>
+            <p>Ruta: <span id="ruta" th:text="${viaje.ruta}"></span></p>
+            <p>Fecha de salida: <span id="fechaSalida" th:text="${#temporals.format(viaje.fechaSalida, 'dd-MM-yyyy ''a las'' HH:mm')}"></span></p>
+            <p>Duración: <span id="duracion" th:text="${viaje.duracion}"></span> horas</p>
+            <p>Precio: <span id="precio" th:text="${viaje.precio}"></span> €</p>
+            <p>Plazas ofertadas: <span id="plazas" th:text="${viaje.plazasOfertadas}"></span></p>
+            <p>Estado del viaje: <span id="estado" th:classappend="${(viaje.estaDisponible()) ? 'abierto':'cerrado'}" th:text="${viaje.getEstado()}"></span></p>
+            <p>Reservas realizadas: 
+                <span th:if="${viaje.seHanRealizadoReservas}" class="reservas-si">Sí</span>
+                <span th:unless="${viaje.seHanRealizadoReservas}" class="reservas-no">No</span>
+            </p>
+            <div class="form-actions">
+                <a href="/viajes"><button type="button">Volver</button></a>
+            </div>
+
+            <form th:if="${viaje.estaDisponible()}" action="/cancelarViaje" method="get" class="form-actions">
+                <input type="hidden" name="codViaje" th:value="${viaje.codViaje}" />
+                <button type="submit">Cancelar viaje</button>
+            </form>
+            
+            <form th:if="${viaje.estaDisponible()}" action="/reservarViaje" method="get" class="form-actions">
+                <input type="hidden" name="codViaje" th:value="${viaje.codViaje}" />
+                <button type="submit">Realizar reserva</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

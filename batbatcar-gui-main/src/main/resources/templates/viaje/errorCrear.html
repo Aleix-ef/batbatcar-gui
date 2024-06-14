@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error al crear viaje</title>
+    <link rel="stylesheet" href="/css/errorCrear.css">
+</head>
+<body>
+    <h1>Error al crear viaje</h1>
+    
+    <div class="error-container">
+        <p>Por favor, corrige los siguientes errores:</p>
+        <ul>
+            <li th:each="error : ${errores}" class="error-message" th:text="${error}"></li>
+        </ul>
+    </div>
+    
+    <div class="btn-container">
+        <button onclick="window.location.href='/viajes'">Volver a la lista de viajes</button>
+    </div>
+</body>
+</html>

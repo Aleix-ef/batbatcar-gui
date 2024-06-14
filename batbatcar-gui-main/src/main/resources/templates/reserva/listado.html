@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${titulo}">Listado de Reservas</title>
+    <link rel="stylesheet" href="/css/detalles_reservas.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 th:text="${titulo}">Listado de Reservas</h2>
+        </div>
+        <div class="reservas">
+            <div class="reserva" th:each="reserva : ${reservas}">
+                <div class="detalle">
+                    <p><strong>Código Reserva:</strong> <span th:text="${reserva.getCodigoReserva()}"></span></p>
+                    <p><strong>Usuario:</strong> <span th:text="${reserva.getUsuario()}"></span></p>
+                    <p><strong>Plazas Solicitadas:</strong> <span th:text="${reserva.getPlazasSolicitadas()}"></span></p>
+                    <p><strong>Fecha de Realización:</strong> <span th:text="${reserva.getFechaRealizacionFormatted()}"></span></p>
+                </div>
+                <div class="acciones">
+                    <a class="btn-cancelar" th:href="@{/cancelarReserva(codReserva=${reserva.getCodigoReserva()})}">Cancelar</a>
+                    <a class="btn-ver-detalles" th:href="@{/detallesReserva(codReserva=${reserva.getCodigoReserva()})}">Ver detalles</a>
+                </div>
+            </div>
+        </div>
+        <div class="button-group">
+            <a href="/viajes"><button type="button">Volver</button></a>
+        </div>
+    </div>
+</body>
+</html>

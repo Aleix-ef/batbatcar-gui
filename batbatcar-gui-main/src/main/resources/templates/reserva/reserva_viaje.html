@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <body>
+            <div class= "container">
+                <h2>Formulario de Reserva</h2>
+                <form action="/confirmarReservar" method="post">
+                    <div class="form-group">
+                        <label for="codigoViaje"> Codigo del viaje: <span th:text="${codViaje}"></span></label>
+                        <input type="hidden" name="codViaje" th:value="${codViaje}">
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Usuario:</label>
+                        <input type="text" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="plazas">Numero de plazas a reservar:</label>
+                        <input type="number" name="plazas" min="1" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="submit">Reservar</button>
+                        <a bref="/viajes"><button type="button">Volver al listado</button></a>
+                    </div>
+                </form>
+            </div>
+        </body>
+    </head>
+</html>

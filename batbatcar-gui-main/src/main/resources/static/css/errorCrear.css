@@ -38,7 +38,7 @@ h1 {
 }
 
 .btn-container button {
-    background-color: #4CAF50;
+    background-color: #dc3545;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -52,5 +52,5 @@ h1 {
 }
 
 .btn-container button:hover {
-    background-color: #45a049;
+    background-color: #dc3545;
 }

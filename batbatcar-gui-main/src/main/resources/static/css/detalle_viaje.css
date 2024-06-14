@@ -50,10 +50,10 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #007bff;
+    background-color: #dc3545;
     color: #fff;
 }
 
 .form-actions button:hover {
-    background-color: #0056b3;
+    background-color: #dc3545;
 }

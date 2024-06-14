@@ -51,7 +51,7 @@ public class Validator {
     }
 
     public static boolean isValidPropietario(String propietario) {
-        return propietario != null && propietario.matches("[A-Z][a-z]\\s[A-Z][a-z]");
+        return propietario != null /*&& propietario.matches("[A-Z][a-z]\\s[A-Z][a-z]")*/;
     }
 
     public static boolean isValidPrecio(double precio) {

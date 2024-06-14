@@ -69,6 +69,7 @@ public class ViajesController {
             return "viaje/errorCrear";
 
         } else {
+            viajesRepository.save(viaje);
             return "redirect:/viajes";
         }
     }
